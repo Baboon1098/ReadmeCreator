@@ -25,7 +25,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'contributing', // Adjust the name to match the key in answers
+    name: 'Contributing', 
     message: 'Enter contribution guidelines:'
   },
   {
@@ -51,8 +51,8 @@ async function init() {
   }
 
 function generateReadmeContent(answers) {
-    const licenseBadge = licenseModule.renderLicenseBadge(answers.license);
-    const licenseLink = licenseModule.rendSSSerLicenseLink(answers.license);
+  const licenseBadge = licenseModule.renderLicenseBadge(answers.license);
+    const licenseLink = licenseModule.renderLicenseLink(answers.license);
     const licenseSection = licenseModule.renderLicenseSection(answers.license);
   
     const content = `
@@ -70,7 +70,7 @@ function generateReadmeContent(answers) {
   ${licenseSection}
   
   ## Contributing
-  ${answers.contributing}
+  ${answers.Contributing}
   
   ## Deployment
   GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
