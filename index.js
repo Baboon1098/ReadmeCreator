@@ -1,6 +1,5 @@
-
-// TODO: Create an array of questions for user input
 const inquirer = require('inquirer');
+const licenseModule = require('./utils/generateMarkdown');
 
 const questions = [
   {
@@ -19,8 +18,14 @@ const questions = [
     message: 'Enter usage information:'
   },
   {
+    type: 'list',
+    name: 'license',
+    message: 'Choose a license for your project:',
+    choices: ['MIT', 'Apache', 'GNU', 'None']
+  },
+  {
     type: 'input',
-    name: 'Contributing',
+    name: 'contributing', // Adjust the name to match the key in answers
     message: 'Enter contribution guidelines:'
   },
   {
@@ -30,34 +35,14 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'email',
-    message: 'Enter your email address:'
-  },
-  {
-    type: 'input',
     name: 'deployedWebpage',
     message: 'Enter the URL of the deployed webpage:'
   }
 ];
 
-// TODO: Create a function to write README file
-const fs = require('fs');
-
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('README file generated successfully!');
-    }
-  });
-}
-
-
 async function init() {
     try {
       const answers = await inquirer.prompt(questions);
-      // Generate README content using answers
       const readmeContent = generateReadmeContent(answers);
       writeToFile('README.md', readmeContent);
     } catch (error) {
@@ -66,30 +51,36 @@ async function init() {
   }
 
 function generateReadmeContent(answers) {
+    const licenseBadge = licenseModule.renderLicenseBadge(answers.license);
+    const licenseLink = licenseModule.rendSSSerLicenseLink(answers.license);
+    const licenseSection = licenseModule.renderLicenseSection(answers.license);
+  
     const content = `
-    # ${answers.projectTitle}
+  # ${answers.projectTitle}
   
-    ## Description
-    ${answers.description}
+  ## Description
+  ${answers.description}
   
-    ## Usage
-    ${answers.usage}
+  ## Usage
+  ${answers.usage}
   
-    ## License
-    // Add license badge and notice here
+  ## License
+  ${licenseBadge}
+  ${licenseLink}
+  ${licenseSection}
   
-    ## Contributing
-    ${answers.contributing}
+  ## Contributing
+  ${answers.contributing}
   
-   ## Deployment
-    GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
-    Deployed Webpage: [${answers.deployedWebpage}]
-    `;
+  ## Deployment
+  GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
+  Deployed Webpage: [${answers.deployedWebpage}]
+  `;
   
     return content;
   }
   
-function writeToFile(fileName, data) {
+  function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
       if (err) {
         console.error(err);
