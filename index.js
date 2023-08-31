@@ -59,6 +59,13 @@ function generateReadmeContent(answers) {
   const content = `
 # ${answers.projectTitle}
 
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Deployment](#deployment)
+
 ## Description
 ${answers.description}
 
@@ -71,7 +78,7 @@ ${licenseSection}
 ${licenseLink}
 
 ## Contributing
-${answers.contributing} // Changed to lowercase 'contributing'
+${answers.contributing}
 
 ## Deployment
 GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})

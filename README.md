@@ -1,6 +1,13 @@
 
 # ReadMe Generator
 
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Deployment](#deployment)
+
 ## Description
 This JavaScript makes it so that you can make a readme File a whole lot easier by following Prompts
 
@@ -18,5 +25,3 @@ Baboon1098 or Paul Allen // Changed to lowercase 'contributing'
 ## Deployment
 GitHub: [Baboon1098](https://github.com/Baboon1098)
 Deployed Webpage: [None]
-
-https://prnt.sc/LcxfXdavcA09
