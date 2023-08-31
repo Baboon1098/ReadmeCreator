@@ -1,24 +1,22 @@
 
-# t
+# ReadMe Generator
 
 ## Description
-t
+This JavaScript makes it so that you can make a readme File a whole lot easier by following Prompts
 
 ## Usage
-t
-
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+All you neede to do for this is pull the file from github and run the code and it will make a readme
 
 ## License
 
-This project is licensed under the terms of the MIT license. See the [License]([MIT License](https://opensource.org/licenses/MIT)) for more information.
-    
-[MIT License](https://opensource.org/licenses/MIT)
+
+
 
 ## Contributing
-t // Changed to lowercase 'contributing'
+Baboon1098 or Paul Allen // Changed to lowercase 'contributing'
 
 ## Deployment
-GitHub: [t](https://github.com/t)
-Deployed Webpage: [t]
+GitHub: [Baboon1098](https://github.com/Baboon1098)
+Deployed Webpage: [None]
+
+https://prnt.sc/LcxfXdavcA09
